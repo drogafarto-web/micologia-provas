@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Consulta de Provas - Micologia Clinica</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #1a237e 0%, #283593 100%);
+            min-height: 100vh;
+            min-height: 100dvh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px;
+        }
+        .container {
+            background: white;
+            border-radius: 16px;
+            padding: 24px;
+            max-width: 420px;
+            width: 100%;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 28px;
+        }
+        .header h1 {
+            font-size: 1.2rem;
+            color: #1a237e;
+            margin-bottom: 6px;
+            line-height: 1.3;
+        }
+        .header p {
+            color: #666;
+            font-size: 0.85rem;
+        }
+        .form-group {
+            margin-bottom: 18px;
+        }
+        label {
+            display: block;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+        }
+        select, input {
+            width: 100%;
+            padding: 14px 16px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 16px;
+            transition: border-color 0.2s;
+            -webkit-appearance: none;
+            appearance: none;
+        }
+        select:focus, input:focus {
+            outline: none;
+            border-color: #1a237e;
+            box-shadow: 0 0 0 3px rgba(26,35,126,0.1);
+        }
+        select {
+            background: white url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23666' d='M6 8L1 3h10z'/%3E%3C/svg%3E") no-repeat right 16px center;
+            cursor: pointer;
+        }
+        button {
+            width: 100%;
+            padding: 16px;
+            background: #1a237e;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+            min-height: 50px;
+            -webkit-tap-highlight-color: transparent;
+        }
+        button:active { background: #0d1257; transform: scale(0.98); }
+        .error {
+            background: #ffebee;
+            color: #c62828;
+            padding: 14px;
+            border-radius: 10px;
+            margin-top: 16px;
+            text-align: center;
+            display: none;
+            font-size: 0.9rem;
+        }
+        .success {
+            background: #e8f5e9;
+            color: #2e7d32;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 16px;
+            text-align: center;
+            display: none;
+        }
+        .success strong {
+            font-size: 1.1rem;
+        }
+        .success .nota {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin: 10px 0;
+            color: #1b5e20;
+        }
+        .success a {
+            display: block;
+            margin-top: 14px;
+            padding: 14px 24px;
+            background: #2e7d32;
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 1rem;
+            min-height: 50px;
+            line-height: 22px;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .success a:active { background: #1b5e20; transform: scale(0.98); }
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            color: #999;
+            font-size: 0.75rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Consulta de Provas Corrigidas</h1>
+            <p>Micologia Clinica - Prof. Bruno de Andrade Pires</p>
+            <p>UNIPAC/FUPAC - Ciencias da Saude</p>
+        </div>
+
+        <div class="form-group">
+            <label for="nome">Selecione seu nome:</label>
+            <select id="nome">
+                <option value="">-- Selecione --</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="matricula">Numero de matricula:</label>
+            <input type="text" inputmode="numeric" id="matricula" placeholder="Ex: 231-000786" autocomplete="off">
+        </div>
+
+        <button onclick="consultar()">Consultar Prova</button>
+
+        <div class="error" id="error"></div>
+        <div class="success" id="success"></div>
+
+        <div class="footer">
+            Prova aplicada em 04/05/2026
+        <div style="margin-top:12px;"><a href="revisao/" style="color:#1a237e;font-size:0.85rem;">Solicitar Revisao de Prova</a></div>
+        </div>
+    </div>
+
+    <script>
+    let alunos = [];
+
+    fetch('alunos.json')
+        .then(r => r.json())
+        .then(data => {
+            alunos = data;
+            const select = document.getElementById('nome');
+            data.forEach(a => {
+                if (a.prova !== null) {
+                    const opt = document.createElement('option');
+                    opt.value = a.matricula;
+                    opt.textContent = a.nome;
+                    select.appendChild(opt);
+                }
+            });
+        });
+
+    function consultar() {
+        const select = document.getElementById('nome');
+        const matriculaInput = document.getElementById('matricula').value.trim();
+        const errorDiv = document.getElementById('error');
+        const successDiv = document.getElementById('success');
+
+        errorDiv.style.display = 'none';
+        successDiv.style.display = 'none';
+
+        if (!select.value) {
+            errorDiv.textContent = 'Selecione seu nome na lista.';
+            errorDiv.style.display = 'block';
+            return;
+        }
+
+        if (!matriculaInput) {
+            errorDiv.textContent = 'Digite seu numero de matricula.';
+            errorDiv.style.display = 'block';
+            return;
+        }
+
+        const aluno = alunos.find(a => a.matricula === select.value);
+        if (!aluno) {
+            errorDiv.textContent = 'Aluno nao encontrado.';
+            errorDiv.style.display = 'block';
+            return;
+        }
+
+        if (matriculaInput !== aluno.matricula) {
+            errorDiv.textContent = 'Matricula incorreta. Tente novamente.';
+            errorDiv.style.display = 'block';
+            return;
+        }
+
+        const num = String(aluno.prova).padStart(2, '0');
+        const nome = aluno.nome.normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^a-zA-Z ]/g, '').replace(/ +/g, ' ').trim();
+        const filename = num + '_' + nome + '_corrigida.pdf';
+
+        successDiv.innerHTML = '<strong>Acesso liberado!</strong>' +
+            '<br><br><a href="provas/' + encodeURIComponent(filename) + '" target="_blank">Baixar Prova Corrigida</a>';
+        successDiv.style.display = 'block';
+    }
+
+    document.getElementById('matricula').addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') consultar();
+    });
+    </script>
+</body>
+</html>

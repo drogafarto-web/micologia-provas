@@ -1,0 +1,199 @@
+{
+  "disciplina": "Micologia Clínica",
+  "instituicao": "UNIPAC/FUPAC - Ciências da Saúde",
+  "professor": "Bruno de Andrade Pires",
+  "data_prova": "04/05/2026",
+  "total_pontos": 20.0,
+  "questoes": {
+    "1": {
+      "enunciado": "Explique por que os fungos são classificados como eucarióticos heterotróficos e como isso impacta sua patogenicidade.",
+      "valor": 2.0,
+      "criterios": {
+        "parte_a": {
+          "descricao": "Classificação (eucariótico + heterotrófico)",
+          "peso": 1.0,
+          "elementos": [
+            "Eucarióticos: possuem núcleo organizado com membrana nuclear, organelas membranosas",
+            "Heterotróficos: não produzem próprio alimento, obtêm nutrientes por absorção de matéria orgânica"
+          ]
+        },
+        "parte_b": {
+          "descricao": "Impacto na patogenicidade",
+          "peso": 1.0,
+          "elementos": [
+            "Eucarióticos → células semelhantes às humanas → poucos alvos terapêuticos seletivos",
+            "Heterotróficos → dependem de substratos orgânicos do hospedeiro → colonização de tecidos"
+          ]
+        }
+      },
+      "resposta_completa": "Os fungos são eucarióticos porque possuem células com núcleo organizado, delimitado por membrana nuclear, além de organelas membranosas como mitocôndrias e retículo endoplasmático. São heterotróficos pois não realizam fotossíntese, obtendo nutrientes por absorção de matéria orgânica do meio. Isso impacta sua patogenicidade de duas formas: por serem eucarióticos, suas células são muito semelhantes às humanas, o que limita os alvos terapêuticos disponíveis para antifúngicos (diferente das bactérias, que são procarióticas e oferecem mais alvos seletivos); por serem heterotróficos, dependem de substratos orgânicos do hospedeiro para sobreviver, favorecendo a colonização de tecidos humanos como pele, mucosas e órgãos internos."
+    },
+    "2": {
+      "enunciado": "Descreva o papel do ergosterol na célula fúngica e explique por que ele é um alvo importante para antifúngicos.",
+      "valor": 2.0,
+      "criterios": {
+        "parte_a": {
+          "descricao": "Papel do ergosterol",
+          "peso": 1.0,
+          "elementos": [
+            "Componente essencial da membrana plasmática dos fungos",
+            "Responsável pela fluidez, integridade e permeabilidade da membrana",
+            "Equivalente funcional do colesterol nas células humanas"
+          ]
+        },
+        "parte_b": {
+          "descricao": "Por que é alvo de antifúngicos",
+          "peso": 1.0,
+          "elementos": [
+            "Exclusivo dos fungos (humanos têm colesterol) → seletividade terapêutica",
+            "Antifúngicos azólicos inibem sua síntese; poliênicos ligam-se diretamente a ele",
+            "Sem ergosterol a membrana perde integridade → morte celular"
+          ]
+        }
+      },
+      "resposta_completa": "O ergosterol é o principal esterol da membrana plasmática dos fungos, sendo responsável por manter sua fluidez, integridade estrutural e permeabilidade seletiva. Funciona de forma análoga ao colesterol nas células humanas. Ele é um alvo importante para antifúngicos porque é exclusivo das células fúngicas — as células humanas possuem colesterol em vez de ergosterol, o que permite o desenvolvimento de fármacos seletivos. Os antifúngicos azólicos (fluconazol, itraconazol) inibem a enzima lanosterol 14α-demetilase, bloqueando a síntese de ergosterol. Já os poliênicos (anfotericina B) ligam-se diretamente ao ergosterol, formando poros na membrana. Em ambos os casos, a membrana fúngica perde sua integridade, levando à morte celular."
+    },
+    "3a": {
+      "enunciado": "Caracterize morfologicamente as leveduras.",
+      "valor": 2.0,
+      "criterios": {
+        "completo": {
+          "descricao": "Caracterização morfológica",
+          "peso": 2.0,
+          "elementos": [
+            "Células unicelulares",
+            "Formato arredondado/oval (esférico a ovoide)",
+            "Reprodução por brotamento (gemulação/budding)",
+            "Podem formar pseudohifas em algumas espécies"
+          ]
+        }
+      },
+      "resposta_completa": "As leveduras são fungos unicelulares com formato arredondado a oval (esférico a ovoide), medindo geralmente entre 3 e 15 micrômetros. Reproduzem-se assexuadamente por brotamento (gemulação), processo no qual uma célula-mãe emite uma protuberância que cresce e se destaca formando uma nova célula. Em algumas espécies, como Candida albicans, os brotos podem permanecer unidos formando pseudohifas (cadeias de células alongadas). São facilmente identificáveis em microscopia por seu formato característico e presença de brotos."
+    },
+    "3b": {
+      "enunciado": "Defina micélio e relacione sua organização.",
+      "valor": 2.0,
+      "criterios": {
+        "completo": {
+          "descricao": "Definição e organização",
+          "peso": 2.0,
+          "elementos": [
+            "Micélio: conjunto de hifas que formam o corpo do fungo filamentoso",
+            "Hifas: estruturas tubulares/filamentosas, septadas ou cenocíticas",
+            "Organização: micélio vegetativo (nutrição) e micélio aéreo/reprodutivo (esporos)"
+          ]
+        }
+      },
+      "resposta_completa": "Micélio é o conjunto de hifas que constitui o corpo vegetativo dos fungos filamentosos. As hifas são estruturas tubulares e filamentosas que podem ser septadas (com divisões transversais chamadas septos) ou cenocíticas (sem septos, sendo multinucleadas). O micélio se organiza em duas porções: o micélio vegetativo, que penetra no substrato e é responsável pela absorção de nutrientes; e o micélio aéreo ou reprodutivo, que se projeta acima do substrato e é responsável pela produção de esporos (conídios), estruturas de reprodução e disseminação do fungo."
+    },
+    "3c": {
+      "enunciado": "Explique o dimorfismo fúngico e sua importância na patogênese.",
+      "valor": 2.0,
+      "criterios": {
+        "parte_a": {
+          "descricao": "Definição de dimorfismo",
+          "peso": 1.0,
+          "elementos": [
+            "Capacidade de alternar entre duas formas morfológicas conforme condições ambientais",
+            "Forma filamentosa (bolor) no ambiente (25°C) e leveduriforme no hospedeiro (37°C)"
+          ]
+        },
+        "parte_b": {
+          "descricao": "Importância na patogênese",
+          "peso": 1.0,
+          "elementos": [
+            "Forma leveduriforme favorece invasão e disseminação nos tecidos",
+            "Evasão do sistema imune (menor superfície, resistência à fagocitose)",
+            "Dificulta diagnóstico (formas diferentes em cultura vs. tecido)"
+          ]
+        }
+      },
+      "resposta_completa": "Dimorfismo fúngico é a capacidade que certos fungos possuem de alternar entre duas formas morfológicas distintas dependendo das condições ambientais. No ambiente externo (temperatura de 25°C), crescem na forma filamentosa (bolor/hifas), e no hospedeiro humano (37°C), assumem a forma leveduriforme. Exemplos incluem Histoplasma capsulatum, Paracoccidioides brasiliensis e Sporothrix schenckii. Sua importância na patogênese é significativa: a transição para a forma leveduriforme no hospedeiro favorece a invasão e disseminação nos tecidos, permite melhor evasão do sistema imunológico (células menores são mais resistentes à fagocitose) e dificulta o diagnóstico, pois o fungo apresenta morfologias diferentes em cultura laboratorial e nos tecidos do paciente."
+    },
+    "4": {
+      "enunciado": "Explique o princípio do uso do KOH no exame micológico direto.",
+      "valor": 2.0,
+      "criterios": {
+        "completo": {
+          "descricao": "Princípio do KOH",
+          "peso": 2.0,
+          "elementos": [
+            "KOH (hidróxido de potássio) é solução alcalina para clarificação",
+            "Dissolve/digere material orgânico do hospedeiro (queratina, células epiteliais, debris)",
+            "Preserva estruturas fúngicas (parede com quitina resiste ao KOH)",
+            "Permite visualização direta ao microscópio"
+          ]
+        }
+      },
+      "resposta_completa": "O KOH (hidróxido de potássio) é utilizado no exame micológico direto como agente clarificante. Seu princípio baseia-se na capacidade da solução alcalina de dissolver e digerir o material orgânico do hospedeiro presente na amostra clínica — como queratina, células epiteliais, debris celulares e muco — que normalmente dificultam a visualização microscópica. As estruturas fúngicas (hifas, esporos, leveduras) não são destruídas pelo KOH porque sua parede celular, composta principalmente por quitina e glucanas, é resistente à ação alcalina. Assim, após o tratamento com KOH, as estruturas fúngicas tornam-se visíveis ao microscópio óptico contra um fundo limpo e transparente."
+    },
+    "5": {
+      "enunciado": "Explique o que caracteriza uma micose superficial.",
+      "valor": 2.0,
+      "criterios": {
+        "completo": {
+          "descricao": "Características de micose superficial",
+          "peso": 2.0,
+          "elementos": [
+            "Infecção fúngica restrita às camadas mais superficiais (epiderme/camada córnea, pelos, unhas)",
+            "Sem invasão de tecidos vivos/profundos",
+            "Geralmente sem resposta inflamatória significativa",
+            "Exemplos: pitiríase versicolor, piedra, tinea nigra"
+          ]
+        }
+      },
+      "resposta_completa": "Uma micose superficial é uma infecção fúngica restrita às camadas mais externas e queratinizadas do corpo — a camada córnea da epiderme, a cutícula dos pelos e a superfície das unhas. Caracteriza-se por não haver invasão de tecidos vivos ou camadas mais profundas da pele, e geralmente não provoca resposta inflamatória significativa no hospedeiro. Os sintomas são predominantemente estéticos (manchas, alterações de cor). Exemplos incluem a pitiríase versicolor (causada por Malassezia), a piedra branca (Trichosporon) e a piedra negra (Piedraia hortae)."
+    },
+    "6": {
+      "enunciado": "Diferencie micoses superficiais de cutâneas.",
+      "valor": 2.0,
+      "criterios": {
+        "completo": {
+          "descricao": "Diferenciação",
+          "peso": 2.0,
+          "elementos": [
+            "Superficiais: camada córnea apenas, sem inflamação, agentes como Malassezia",
+            "Cutâneas: epiderme/derme mais profunda, com resposta inflamatória",
+            "Cutâneas: causadas por dermatófitos (Trichophyton, Microsporum, Epidermophyton)",
+            "Cutâneas: sintomas como prurido, descamação, lesões ativas"
+          ]
+        }
+      },
+      "resposta_completa": "As micoses superficiais afetam apenas a camada córnea (mais externa) da pele e a superfície dos pelos, sem provocar resposta inflamatória no hospedeiro. São causadas por fungos como Malassezia e Piedraia, e manifestam-se principalmente como alterações estéticas (manchas). Já as micoses cutâneas atingem camadas mais profundas — epiderme viável, derme, unhas e folículos pilosos — provocando resposta inflamatória do hospedeiro com sintomas como prurido, descamação, eritema e lesões ativas. São causadas principalmente por dermatófitos (Trichophyton, Microsporum e Epidermophyton), fungos queratinofílicos que degradam a queratina dos tecidos."
+    },
+    "7": {
+      "enunciado": "Explique por que espécies de Candida são consideradas oportunistas.",
+      "valor": 2.0,
+      "criterios": {
+        "completo": {
+          "descricao": "Candida como oportunista",
+          "peso": 2.0,
+          "elementos": [
+            "Candida faz parte da microbiota normal humana (boca, TGI, vagina, pele)",
+            "Em condições normais não causa doença — equilíbrio com hospedeiro",
+            "Torna-se patogênica com quebra de defesas (imunossupressão, antibióticos, dispositivos invasivos)",
+            "Aproveita a oportunidade da fragilidade imunológica"
+          ]
+        }
+      },
+      "resposta_completa": "Espécies de Candida são consideradas oportunistas porque fazem parte da microbiota normal do corpo humano, colonizando naturalmente a boca, o trato gastrointestinal, a vagina e a pele sem causar doença em condições normais. Elas convivem em equilíbrio com o hospedeiro e com outros microrganismos da flora. Tornam-se patogênicas quando há quebra das barreiras de defesa do hospedeiro — como em situações de imunossupressão (HIV/AIDS, quimioterapia, corticoides), uso prolongado de antibióticos de amplo espectro (que eliminam bactérias competidoras), presença de dispositivos invasivos (cateteres, sondas), diabetes descompensado ou internação prolongada em UTI. Assim, aproveitam a 'oportunidade' criada pela fragilidade do hospedeiro para proliferar e causar infecção (candidíase)."
+    },
+    "8": {
+      "enunciado": "Explique por que a presença de fungos em uma amostra nem sempre indica infecção.",
+      "valor": 2.0,
+      "criterios": {
+        "completo": {
+          "descricao": "Presença ≠ infecção",
+          "peso": 2.0,
+          "elementos": [
+            "Fungos podem ser colonizadores (microbiota normal) sem causar doença",
+            "Pode haver contaminação da amostra (coleta, transporte, processamento)",
+            "Necessidade de correlação clínica (sintomas, imunidade, local da coleta)",
+            "Diferença entre colonização, contaminação e infecção ativa"
+          ]
+        }
+      },
+      "resposta_completa": "A presença de fungos em uma amostra clínica nem sempre indica infecção ativa por diversos motivos. Primeiro, muitos fungos são colonizadores naturais do corpo humano (como Candida na mucosa oral e vaginal), podendo ser isolados em culturas sem que haja doença. Segundo, pode ocorrer contaminação da amostra durante a coleta, transporte ou processamento laboratorial, especialmente por fungos ambientais ubíquos. Terceiro, é necessário diferenciar entre colonização (presença sem dano), contaminação (artefato laboratorial) e infecção ativa (invasão tecidual com resposta do hospedeiro). A interpretação correta exige correlação com o quadro clínico do paciente, seus fatores de risco, o tipo de material coletado e a quantidade/repetibilidade do isolamento. Tratamentos desnecessários podem ser evitados com essa análise integrada entre laboratório e clínica."
+    }
+  }
+}

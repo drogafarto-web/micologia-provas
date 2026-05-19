@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Revisao de Prova - Micologia Clinica</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #1a237e 0%, #283593 100%);
+            min-height: 100vh;
+            padding: 16px;
+        }
+        .container {
+            background: white;
+            border-radius: 16px;
+            padding: 24px;
+            max-width: 600px;
+            margin: 0 auto;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        .header { text-align: center; margin-bottom: 20px; }
+        .header h1 { font-size: 1.2rem; color: #1a237e; margin-bottom: 6px; }
+        .header p { color: #666; font-size: 0.85rem; }
+        .timer {
+            background: #fff3e0; padding: 12px; border-radius: 8px;
+            text-align: center; margin-bottom: 20px; font-weight: 600; color: #e65100;
+            font-size: 0.9rem;
+        }
+        .timer.closed { background: #ffebee; color: #c62828; }
+        .form-group { margin-bottom: 16px; }
+        label { display: block; font-weight: 600; color: #333; margin-bottom: 6px; font-size: 0.9rem; }
+        select, input, textarea {
+            width: 100%; padding: 12px; border: 2px solid #e0e0e0;
+            border-radius: 8px; font-size: 16px; -webkit-appearance: none;
+        }
+        select { background: white url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23666' d='M6 8L1 3h10z'/%3E%3C/svg%3E") no-repeat right 16px center; cursor: pointer; }
+        select:focus, input:focus, textarea:focus { outline: none; border-color: #1a237e; }
+        textarea { min-height: 120px; resize: vertical; }
+        button {
+            width: 100%; padding: 16px; background: #1a237e; color: white;
+            border: none; border-radius: 10px; font-size: 1rem;
+            font-weight: 600; cursor: pointer; min-height: 50px;
+        }
+        button:active { background: #0d1257; transform: scale(0.98); }
+        button:disabled { background: #9e9e9e; cursor: not-allowed; }
+        .info-box {
+            background: #e3f2fd; padding: 12px; border-radius: 8px;
+            font-size: 0.85rem; color: #1565c0; margin-bottom: 16px;
+        }
+        .success-msg {
+            display: none; background: #e8f5e9; padding: 20px;
+            border-radius: 10px; text-align: center; color: #2e7d32;
+        }
+        .success-msg h2 { font-size: 1.1rem; margin-bottom: 8px; }
+        .error { background: #ffebee; color: #c62828; padding: 12px; border-radius: 8px; margin-top: 12px; text-align: center; display: none; }
+        .footer { text-align: center; margin-top: 16px; color: #999; font-size: 0.75rem; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Revisao de Prova</h1>
+            <p>Micologia Clinica - Prof. Bruno de Andrade Pires</p>
+            <p>UNIPAC/FUPAC - Ciencias da Saude</p>
+        </div>
+
+        <div id="timer" class="timer"></div>
+
+        <div id="form-container">
+            <div class="info-box">
+                Preencha o formulario abaixo para solicitar revisao de uma questao.
+                Voce pode enviar uma solicitacao por questao. Prazo: 48h apos publicacao das notas.
+            </div>
+
+            <form id="revisao-form" name="revisao-prova" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/revisao/obrigado.html">
+                <input type="hidden" name="form-name" value="revisao-prova">
+                <p style="display:none"><label>Nao preencha: <input name="bot-field"></label></p>
+
+                <div class="form-group">
+                    <label for="nome">Seu nome:</label>
+                    <select id="nome" name="nome" required>
+                        <option value="">-- Selecione --</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="matricula">Numero de matricula:</label>
+                    <input type="text" id="matricula" name="matricula" placeholder="Ex: 231-000786" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="questao">Questao a revisar:</label>
+                    <select id="questao" name="questao" required>
+                        <option value="">-- Selecione a questao --</option>
+                        <option value="1">Questao 1 - Eucarioticos heterotroficos e patogenicidade (2.0 pts)</option>
+                        <option value="2">Questao 2 - Ergosterol e antifungicos (2.0 pts)</option>
+                        <option value="3a">Questao 3a - Morfologia das leveduras (2.0 pts)</option>
+                        <option value="3b">Questao 3b - Micelio e organizacao (2.0 pts)</option>
+                        <option value="3c">Questao 3c - Dimorfismo fungico (2.0 pts)</option>
+                        <option value="4">Questao 4 - KOH no exame micologico direto (2.0 pts)</option>
+                        <option value="5">Questao 5 - Micose superficial (2.0 pts)</option>
+                        <option value="6">Questao 6 - Micoses superficiais vs cutaneas (2.0 pts)</option>
+                        <option value="7">Questao 7 - Candida como oportunista (2.0 pts)</option>
+                        <option value="8">Questao 8 - Presenca de fungos vs infeccao (2.0 pts)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="nota_atual">Sua nota nesta questao:</label>
+                    <input type="number" id="nota_atual" name="nota_atual" step="0.5" min="0" max="2.0" placeholder="Ex: 1.0" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="argumentacao">Sua argumentacao (explique por que merece revisao):</label>
+                    <textarea id="argumentacao" name="argumentacao" placeholder="Descreva detalhadamente por que voce acredita que sua resposta merece uma nota maior. Cite os pontos que voce abordou na prova." required minlength="30"></textarea>
+                </div>
+
+                <button type="submit" id="submit-btn">Enviar Solicitacao de Revisao</button>
+                <div class="error" id="error-msg"></div>
+            </form>
+
+            <div class="success-msg" id="success-msg">
+                <h2>Solicitacao enviada!</h2>
+                <p>Sua revisao sera analisada pelo professor. O resultado sera comunicado em breve.</p>
+                <p style="margin-top:12px;"><a href="/revisao/" style="color:#1a237e;">Enviar outra solicitacao</a></p>
+            </div>
+        </div>
+
+        <div class="footer">
+            Prova aplicada em 04/05/2026 | Notas publicadas em 19/05/2026
+        </div>
+    </div>
+
+    <script>
+    var DEADLINE = new Date("2026-05-21T00:00:00");
+
+    (function checkPrazo(){
+        var now = new Date();
+        var timer = document.getElementById('timer');
+        if(now > DEADLINE){
+            timer.textContent = 'Prazo encerrado - nao e possivel enviar revisoes';
+            timer.classList.add('closed');
+            document.getElementById('submit-btn').disabled = true;
+        } else {
+            var diff = DEADLINE.getTime() - now.getTime();
+            var h = Math.floor(diff / 3600000);
+            var m = Math.floor((diff % 3600000) / 60000);
+            timer.textContent = 'Prazo aberto: ' + h + 'h ' + m + 'min restantes';
+        }
+    })();
+
+    fetch('../alunos.json').then(function(r){return r.json()}).then(function(data){
+        var sel = document.getElementById('nome');
+        data.forEach(function(a){
+            if(a.prova !== null){
+                var opt = document.createElement('option');
+                opt.value = a.nome;
+                opt.textContent = a.nome;
+                sel.appendChild(opt);
+            }
+        });
+    });
+
+    document.getElementById('revisao-form').addEventListener('submit', function(e){
+        var arg = document.getElementById('argumentacao').value.trim();
+        if(arg.length < 30){
+            e.preventDefault();
+            var err = document.getElementById('error-msg');
+            err.textContent = 'A argumentacao deve ter pelo menos 30 caracteres.';
+            err.style.display = 'block';
+            return;
+        }
+        var now = new Date();
+        if(now > DEADLINE){
+            e.preventDefault();
+            alert('Prazo encerrado.');
+            return;
+        }
+        // Form submits naturally to Formsubmit.co
+    });
+    </script>
+</body>
+</html>
