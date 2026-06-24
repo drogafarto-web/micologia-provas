@@ -216,9 +216,7 @@
             return;
         }
 
-        const num = String(aluno.prova).padStart(2, '0');
-        const nome = aluno.nome.normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^a-zA-Z ]/g, '').replace(/ +/g, ' ').trim();
-        const filename = num + '_' + nome + '_corrigida.pdf';
+        const filename = aluno.arquivo;
 
         successDiv.innerHTML = '<strong>Acesso liberado!</strong>' +
             '<br><br><a href="provas/' + encodeURIComponent(filename) + '" target="_blank">Baixar Prova Corrigida</a>';

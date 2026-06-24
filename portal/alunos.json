@@ -186,12 +186,6 @@
     "arquivo": "45_Layza Patricio Bonato_corrigida.pdf"
   },
   {
-    "matricula": "221-000703",
-    "nome": "LUIZA PADOVANI TOLEDO",
-    "prova": 49,
-    "arquivo": "49_Luiza Padovani Toledo_corrigida.pdf"
-  },
-  {
     "matricula": "231-000940",
     "nome": "LUMA DO ROSARIO ASSIS SANTOS",
     "prova": 33,
@@ -214,12 +208,6 @@
     "nome": "MARIA LUIZA DOS SANTOS MIGUEL",
     "prova": 5,
     "arquivo": "05_Maria Luiza Dos Santos Miguel_corrigida.pdf"
-  },
-  {
-    "matricula": "231-002546",
-    "nome": "MARIAH DA SILVA VICENTE",
-    "prova": null,
-    "arquivo": ""
   },
   {
     "matricula": "241-007824",
@@ -304,11 +292,5 @@
     "nome": "YASMIN TAVARES AGUIAR",
     "prova": 22,
     "arquivo": "22_Yasmin Tavares Aguiar_corrigida.pdf"
-  },
-  {
-    "matricula": "000-000001",
-    "nome": "ALUNO TESTE",
-    "prova": 99,
-    "arquivo": "99_Aluno Teste_corrigida.pdf"
   }
 ]
